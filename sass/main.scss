@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+// global reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1 rem = 10px
+}
+
+body {
+  background-color: var(--Cream);
+  font-size: 1.4rem; // 14px
+  font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: minmax(min-content, calc(100vh - 4rem));
+  grid-template-columns: minmax(min-content, 60rem);
+
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+.container {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--White);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content {
+  padding: 2rem;
+
+  &__heading-primary {
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.6rem;
+  }
+  &__heading-secondary {
+    color: var(--Very-dark-blue);
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-family: "Fraunces";
+    text-transform: capitalize;
+
+    margin-bottom: 2rem;
+  }
+
+  &__paragraph {
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 4rem;
+    line-height: 1.5;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    &--current {
+      color: var(--Dark-cyan);
+      font-size: 3.8rem;
+      font-weight: 700;
+      font-family: "Fraunces";
+    }
+
+    &--before {
+      color: var(--Very-dark-blue);
+      text-decoration: line-through;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  border: none;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--Dark-cyan);
+  color: var(--White);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  transform: translateY(-1rem);
+}
